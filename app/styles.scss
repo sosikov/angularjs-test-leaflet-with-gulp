@@ -1,0 +1,20 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+}
+
+html, body, .router {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.leaflet-control-container {
+    display: none !important;
+}
+
+.leaflet-marker-icon {
+    opacity: 0.9;
+}

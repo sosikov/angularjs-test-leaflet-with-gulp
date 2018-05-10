@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="panel">
+        <input id="autocomplete" type="text" placeholder="Поиск" />
+    </div>
+    <div class="button">
+        <button ng-if="!map.wasChecked" ng-click="map.changeMapLayer()">Спутник</button>
+        <button ng-if="map.wasChecked" ng-click="map.changeMapLayer()">Карта</button>
+    </div>
+    <div class="menubar" ng-show="map.isShow">
+        <div class="pic">
+            <img src="../../photo.png">
+        </div>
+        <div class="content">
+            <div class="section">
+                <p><i class="fas fa-tag"></i></p>
+                <div class="infos">
+                    <p class="big">{{map.name}}</p>
+                    <p class="small">{{map.address}}</p>
+                </div>
+            </div>
+            <div class="section">
+                <p><i class="fas fa-compass"></i></p>
+                <div class="infos">
+                    <p class="big">Geo:</p>
+                    <p class="small">lng: {{map.lng | number:4}}</p>
+                    <p class="small">lat: {{map.lat | number:4}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a ng-click="map.isShow = !map.isShow">Скрыть</a>
+            <a>Новости</a>
+            <a>Контакты</a>
+        </div>
+    </div>
+    <div id="mapid" class="map"></div>
+</div>
