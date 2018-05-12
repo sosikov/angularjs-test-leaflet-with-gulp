@@ -50,32 +50,32 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('app/build'))
 });
 
-gulp.task('web', function () {
-    connect.server({
-        root: 'app/',
-        port: 3000,
-        fallback: 'app/index.html',
-        livereload: true
-    });
-});
+// gulp.task('web', function () {
+//     connect.server({
+//         root: 'app/',
+//         port: 4000,
+//         fallback: 'app/index.html',
+//         livereload: true
+//     });
+// });
 
-gulp.task('reload', function () {
-    gulp.src(path.built)
-        .pipe(watch(path.built))
-        .pipe(connect.reload())
-});
+// gulp.task('reload', function () {
+//     gulp.src(path.built)
+//         .pipe(watch(path.built))
+//         .pipe(connect.reload())
+// });
 
-gulp.task('watch', function () {
-    watch(path.scripts, function () {
-        gulp.start('scripts');
-    });
-    watch(path.styles, function () {
-        gulp.start('styles');
-    });
-});
+// gulp.task('watch', function () {
+//     watch(path.scripts, function () {
+//         gulp.start('scripts');
+//     });
+//     watch(path.styles, function () {
+//         gulp.start('styles');
+//     });
+// });
 
 gulp.task('clean', function (callback) {
     rimraf(path.clean, callback);
 });
 
-gulp.task('serve', ['scripts', 'styles', 'web', 'reload', 'watch']);
+gulp.task('build', ['scripts', 'styles']);
